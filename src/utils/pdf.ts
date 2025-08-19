@@ -118,10 +118,10 @@ export const generateBillPDF = (
     </head>
     <body>
       <div class="header">
-        <h1 class="shop-name">${settings.name}</h1>
+        <h1 class="shop-name">Vasanthi Maggam Works</h1>
         <div class="shop-details">
-          ${settings.address}<br>
-          Phone: ${settings.phone}
+          Pedha Koneru Street<br>
+          Phone: 9182443151
         </div>
       </div>
 
@@ -203,7 +203,7 @@ export const generateBillPDF = (
       ${order.paymentStatus === 'Paid' ? '<div class="paid-stamp">PAID</div>' : ''}
 
       <div class="footer">
-        <p><strong>Thank you for choosing ${settings.name}!</strong></p>
+        <p><strong>Thank you for choosing Vasnthi Maggam Works!</strong></p>
         <p>Visit us again for all your tailoring needs.</p>
       </div>
 
