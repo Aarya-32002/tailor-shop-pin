@@ -14,32 +14,37 @@ export const MeasurementScreen: React.FC<MeasurementScreenProps> = ({ customer, 
 
   useEffect(() => {
     // Load existing measurements if available
-    const loadMeasurements = async () => {
-      const customerMeasurement = await storage.getMeasurementByCustomerId(customer.id);
-      if (customerMeasurement) {
-        setMeasurements(customerMeasurement);
-      }
-    };
-    
-    loadMeasurements();
+    const existingMeasurements = storage.getMeasurements();
+    const customerMeasurement = existingMeasurements.find(m => m.customerId === customer.id);
+    if (customerMeasurement) {
+      setMeasurements(customerMeasurement);
+    }
   }, [customer.id]);
 
   const handleSave = async () => {
     setIsLoading(true);
 
-    try {
-      await storage.saveMeasurement({
-        customerId: customer.id,
-        ...measurements
-      });
-      
-      onNavigate('home');
-    } catch (error) {
-      console.error('Failed to save measurements:', error);
-      alert('Failed to save measurements. Please try again.');
-    } finally {
-      setIsLoading(false);
+    const allMeasurements = storage.getMeasurements();
+    const existingIndex = allMeasurements.findIndex(m => m.customerId === customer.id);
+
+    const measurementData: Measurement = {
+      ...measurements,
+      customerId: customer.id,
+      createdAt: measurements.createdAt || new Date().toISOString(),
+      updatedAt: new Date().toISOString()
+    } as Measurement;
+
+    if (existingIndex >= 0) {
+      allMeasurements[existingIndex] = measurementData;
+    } else {
+      allMeasurements.push(measurementData);
     }
+
+    storage.saveMeasurements(allMeasurements);
+
+    setTimeout(() => {
+      onNavigate('home');
+    }, 500);
   };
 
   const handleInputChange = (field: string, value: string) => {

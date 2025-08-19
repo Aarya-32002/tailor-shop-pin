@@ -22,8 +22,20 @@ export interface Measurement {
   // Ladies measurements
   bust?: number;
   blouseLength?: number;
+  topLength?: number;
+  handLength?: number;
+  handLoose?: number;
+  highChest?: number;
+  middleChest?: number;
+  waistLoose?: number;
+  hipLoose?: number;
+  frontNeckDeep?: number;
+  backNeckDeep?: number;
+  frontLength?: number;
   lehengaLength?: number;
+  lehengaLoose?: number;
   kurtiLength?: number;
+  pantLoose?: number;
   // Kids measurements
   height?: number;
   dressLength?: number;

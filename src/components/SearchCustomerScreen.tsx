@@ -194,10 +194,17 @@ export const SearchCustomerScreen: React.FC<SearchCustomerScreenProps> = ({ onNa
                           )}
                           {selectedCustomer.gender === 'Ladies' && (
                             <>
-                              {customerMeasurement.bust && <div><span className="text-gray-600">Bust:</span> <span className="font-medium">{customerMeasurement.bust}"</span></div>}
+                              {customerMeasurement.highChest && <div><span className="text-gray-600">High Chest:</span> <span className="font-medium">{customerMeasurement.highChest}"</span></div>}
+                              {customerMeasurement.middleChest && <div><span className="text-gray-600">Middle Chest:</span> <span className="font-medium">{customerMeasurement.middleChest}"</span></div>}
                               {customerMeasurement.waist && <div><span className="text-gray-600">Waist:</span> <span className="font-medium">{customerMeasurement.waist}"</span></div>}
+                              {customerMeasurement.waistLoose && <div><span className="text-gray-600">Waist Loose:</span> <span className="font-medium">{customerMeasurement.waistLoose}"</span></div>}
                               {customerMeasurement.hip && <div><span className="text-gray-600">Hip:</span> <span className="font-medium">{customerMeasurement.hip}"</span></div>}
+                              {customerMeasurement.hipLoose && <div><span className="text-gray-600">Hip Loose:</span> <span className="font-medium">{customerMeasurement.hipLoose}"</span></div>}
                               {customerMeasurement.blouseLength && <div><span className="text-gray-600">Blouse:</span> <span className="font-medium">{customerMeasurement.blouseLength}"</span></div>}
+                              {customerMeasurement.topLength && <div><span className="text-gray-600">Top Length:</span> <span className="font-medium">{customerMeasurement.topLength}"</span></div>}
+                              {customerMeasurement.handLength && <div><span className="text-gray-600">Hand Length:</span> <span className="font-medium">{customerMeasurement.handLength}"</span></div>}
+                              {customerMeasurement.lehengaLength && <div><span className="text-gray-600">Lehenga:</span> <span className="font-medium">{customerMeasurement.lehengaLength}"</span></div>}
+                              {customerMeasurement.lehengaLoose && <div><span className="text-gray-600">Lehenga Loose:</span> <span className="font-medium">{customerMeasurement.lehengaLoose}"</span></div>}
                               {customerMeasurement.kurtiLength && <div><span className="text-gray-600">Kurti:</span> <span className="font-medium">{customerMeasurement.kurtiLength}"</span></div>}
                             </>
                           )}
