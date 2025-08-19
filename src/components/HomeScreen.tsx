@@ -33,37 +33,37 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate, onLogout }) 
     {
       title: 'New Customer',
       icon: UserPlus,
-      color: 'bg-green-500 hover:bg-green-600',
       screen: 'add-customer',
-      description: 'Add new customer'
+      description: 'Add new customer',
+      illustration: 'https://i.ibb.co/jZ8hJmc9/1-tailor.png'
     },
     {
       title: 'Search Customer',
       icon: Search,
-      color: 'bg-blue-500 hover:bg-blue-600',
       screen: 'search-customer',
-      description: 'Find existing customer'
+      description: 'Find existing customer',
+      illustration: 'https://i.ibb.co/N6zcPVfz/2-tailor.png'
     },
     {
       title: 'Order History',
       icon: ClipboardList,
-      color: 'bg-purple-500 hover:bg-purple-600',
       screen: 'order-history',
-      description: 'View all orders'
+      description: 'View all orders',
+      illustration: 'https://i.ibb.co/SwwWfMsk/3-tailor.png'
     },
     {
       title: 'Billing',
       icon: Receipt,
-      color: 'bg-orange-500 hover:bg-orange-600',
       screen: 'billing',
-      description: 'Create new bill'
+      description: 'Create new bill',
+      illustration: 'https://i.ibb.co/QFSb2SRw/3d-illustration-payment-confirmation-bill.jpg'
     },
     {
       title: 'Settings',
       icon: Settings,
-      color: 'bg-gray-500 hover:bg-gray-600',
       screen: 'settings',
-      description: 'Shop & price settings'
+      description: 'Shop & price settings',
+      illustration: 'https://i.ibb.co/rRdvHf6z/6326.jpg'
     }
   ];
 
@@ -133,19 +133,22 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate, onLogout }) 
         </div>
 
         {/* Main Menu */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {menuItems.map((item, index) => (
             <button
               key={index}
               onClick={() => onNavigate(item.screen)}
-              className={`${item.color} text-white p-8 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 text-left group`}
+              className="bg-white p-6 rounded-lg shadow hover:shadow-md transition-all duration-200 text-center"
             >
-              <div className="flex items-center justify-between mb-4">
-                <item.icon className="w-8 h-8" />
-                <div className="w-2 h-2 bg-white bg-opacity-30 rounded-full group-hover:bg-opacity-50 transition-all"></div>
+              <div className="flex justify-center mb-4">
+                <img 
+                  src={item.illustration} 
+                  alt={item.title} 
+                  className="h-28 object-contain" 
+                />
               </div>
-              <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-              <p className="text-white text-opacity-90 text-sm">{item.description}</p>
+              <h3 className="text-lg font-bold text-gray-900">{item.title}</h3>
+              <p className="text-gray-500 text-sm mt-1">{item.description}</p>
             </button>
           ))}
         </div>

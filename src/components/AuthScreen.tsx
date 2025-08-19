@@ -46,8 +46,8 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({ onLogin }) => {
           <div className="inline-flex items-center justify-center w-20 h-20 bg-blue-600 rounded-full mb-4">
             <Scissors className="w-10 h-10 text-white" />
           </div>
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">{settings.name}</h1>
-          <p className="text-gray-600">Vasamthi Maggam Works</p>
+          <h1 className="text-2xl font-bold text-gray-900 mb-2">Vasamthi Maggam Works</h1>
+          <p className="text-gray-600">Tailoring Management System</p>
         </div>
 
         {/* Login Form */}
