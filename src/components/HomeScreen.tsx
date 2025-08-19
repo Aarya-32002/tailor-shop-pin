@@ -78,7 +78,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate, onLogout }) 
                 <Scissors className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h1 className="text-xl font-bold text-gray-900">{settings.name}</h1>
+                <h1 className="text-xl font-bold text-gray-900">Vasanthi Maggam Works</h1>
                 <p className="text-sm text-gray-500">Management Dashboard</p>
               </div>
             </div>
